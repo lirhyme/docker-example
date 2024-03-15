@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mongodb:
+    user: root
+    image: 'bitnami/mongodb:7.0.5'
+    ports:
+      - 27017:27017
+    volumes:
+      - './docker/mongodb-data:/bitnami/mongodb'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MONGODB_USERNAME=admin
+      - MONGODB_PASSWORD=admin
+      - MONGODB_DATABASE=test
